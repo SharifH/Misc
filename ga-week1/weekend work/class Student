@@ -1,0 +1,20 @@
+class Student
+	attr_reader :name, :email, :phone
+
+	#reads it out
+	#attr_writer #writes it out
+	@attr_accessor :name, :email, :phone #both writes and reads
+
+	def initialize(student)
+
+
+	if ( -g == )
+
+		groups.each {|student| 
+			puts student.name + " " + student.phone
+			}
+
+	elsif ('-n' == flag)
+		student_list.sample(number).each do |student|
+			p student.name
+			end

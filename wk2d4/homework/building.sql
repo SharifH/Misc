@@ -1,0 +1,21 @@
+CREATE TABLE building (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	address TEXT
+);
+
+CREATE TABLE unit(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	number TEXT,
+	sqft INTEGER,
+	rent INTEGER,
+	tenant_id INTEGER,
+	building_id INTEGER
+);
+
+CREATE TABLE tenant(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	phone TEXT
+);

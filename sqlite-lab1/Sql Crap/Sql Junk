@@ -1,0 +1,3 @@
+SELECT p.name, w.* FROM product, wishlists e WHERE p.id = w.productsid
+
+SELECT products.name, wishlists.user_id FROM products, wishlists WHERE products_id = wishlists.product_id;

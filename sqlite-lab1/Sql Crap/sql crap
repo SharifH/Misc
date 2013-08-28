@@ -1,0 +1,186 @@
+➜  sqlite-lab1  sqlite store.sqlite3
+zsh: correct 'sqlite' to 'sqlite3' [nyae]? y
+SQLite version 3.7.12 2012-04-03 19:43:07
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .schema
+CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "name" varchar(255), "price" float, "on_sale" boolean DEFAULT 'f' NOT NULL);
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "name" varchar(255));
+CREATE TABLE "wishlists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "user_id" integer, "product_id" integer);
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+sqlite> SELECT name,price,on_sale FROM products LIMIT 30
+   ...>
+   ...> q
+   ...> ;
+Error: near "q": syntax error
+sqlite> SELECT name,price,on_sale FROM products LIMIT 30;
+Lonely Pillow|78.82|t
+Cat Ears|99.99|f
+The Ruby Programming Language|19.99|t
+Silicon Valley Monopoly|10.99|t
+Card Against Humanity|25.0|f
+Brown Leather Boots|82.0|t
+Hoodie|35.0|t
+Set of 12 Mason Jars|6.22|f
+Set of silverware|22.99|t
+Dress Shirt|65.0|f
+sqlite> SELECT name FROM user;
+Error: no such table: user
+sqlite> SELECT name FROM users;
+Ryan Waters
+Alexander Altair
+David Ferris
+Sharif Al-Hadidi
+Travis Miller
+Kristine Lai
+Lior Bendat
+Xiao G. Wu
+Megan ORorke
+Joshua Shelto
+Brian Schroer
+Kevin Gao
+Ryan Waters
+Alexander Altair
+David Ferris
+Travis Miller
+Ian Yang
+Anil Bridgpal
+Jackie Herrlin
+Markus Guehrs
+Paul Gleger
+sqlite> SELECT product_id,user_id FROM wishlists;
+1|13
+1|20
+1|8
+1|3
+1|14
+1|12
+2|20
+2|19
+3|20
+3|14
+3|1
+3|4
+3|12
+3|2
+3|8
+3|3
+3|15
+3|5
+3|21
+3|10
+3|18
+3|13
+3|6
+4|4
+4|19
+4|1
+4|15
+4|8
+4|10
+4|5
+4|7
+4|9
+5|20
+5|9
+5|16
+5|18
+5|6
+6|12
+6|19
+6|9
+6|8
+6|17
+6|20
+6|6
+6|15
+6|11
+6|2
+6|3
+6|5
+6|13
+6|18
+6|4
+6|14
+7|10
+7|19
+7|11
+7|17
+8|5
+8|21
+8|3
+8|16
+8|14
+8|4
+8|17
+8|8
+8|7
+8|13
+8|2
+8|6
+8|9
+8|20
+8|15
+8|10
+8|1
+8|19
+9|19
+9|10
+sqlite> SELECT name, price, on_sale FROM products WHERE price<10;
+Set of 12 Mason Jars|6.22|f
+sqlite> SELECT name, price, on_sale FROM products WHERE price=<30;
+Error: near "<": syntax error
+sqlite> SELECT name, price, on_sale FROM products WHERE price>=30;
+Lonely Pillow|78.82|t
+Cat Ears|99.99|f
+Brown Leather Boots|82.0|t
+Hoodie|35.0|t
+Dress Shirt|65.0|f
+sqlite> SELECT name, price, on_sale FROM products WHERE price <= 30 AND price >=10;
+The Ruby Programming Language|19.99|t
+Silicon Valley Monopoly|10.99|t
+Card Against Humanity|25.0|f
+Set of silverware|22.99|t
+sqlite> SELECT id, name FROM users;
+1|Ryan Waters
+2|Alexander Altair
+3|David Ferris
+4|Sharif Al-Hadidi
+5|Travis Miller
+6|Kristine Lai
+7|Lior Bendat
+8|Xiao G. Wu
+9|Megan ORorke
+10|Joshua Shelto
+11|Brian Schroer
+12|Kevin Gao
+13|Ryan Waters
+14|Alexander Altair
+15|David Ferris
+16|Travis Miller
+17|Ian Yang
+18|Anil Bridgpal
+19|Jackie Herrlin
+20|Markus Guehrs
+22|Paul Gleger
+sqlite> SELECT user_id, product_id FROM wishlists WHERE user_id=9;
+9|4
+9|5
+9|6
+9|8
+sqlite> SELECT user_id, product_id FROM wishlists WHERE user_id=4;
+4|3
+4|4
+4|6
+4|8
+sqlite> SELECT name FROM products WHERE id = 4 AND id = 3 AND id = 6 AND id = 8;
+sqlite> SELECT name FROM products WHERE id = 4;
+The Ruby Programming Language
+sqlite> SELECT name FROM products WHERE id = 3;
+Cat Ears
+sqlite> SELECT name FROM products WHERE id = 6;
+Card Against Humanity
+sqlite> SELECT name FROM products WHERE id = 8;
+Hoodie
+sqlite>

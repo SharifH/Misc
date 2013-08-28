@@ -1,0 +1,54 @@
+
+body {
+	background-image: url(../images/background.png);
+}
+
+header {
+	height: 100px;
+	background-color: rgb(196,196,196);
+}
+.box{
+	background-color: white;
+	width: 600px;
+	height: 300px;
+	padding: 20px;
+	margin: 40px auto;
+	border-radius: 25px;
+
+}
+.container {
+  width: 800px;
+  margin: auto;
+}
+img {
+	height: 100px;
+	float: left;
+}
+nav{
+	width: 700px;
+	float: left;
+	margin-left: 800px;
+	margin-top: 20px;
+	position: absolute;
+}
+a{
+	text-decoration: none;
+	color: white;
+	font-family: Arial;
+	/*float: left;*/
+}
+li{
+	list-style-type: none;
+	float: left;
+	margin-right: 100px;
+	font-size: 20px;
+}
+.button{
+	background-color: rgb(66, 114, 196);
+	width: 90px;
+	height: 40px;
+	text-align: center;
+	
+	
+	border-radius: 10px;
+}

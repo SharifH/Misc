@@ -1,0 +1,42 @@
+<html>
+<head>
+  <script>
+    function sayHello() {
+      alert("Hello World!");
+    }
+    
+    function changeBGC(color){
+     document.bgColor = color;
+    }
+ 
+    function promptColor(){
+      var color = prompt("enter a color");
+      changeBGC(color);
+    }
+    
+    function changeImage(){
+      document.getElementById("imageid").src="http://ia.media-imdb.com/images/M/MV5BMjAyMzI0NTU0NF5BMl5BanBnXkFtZTcwODc0MjAwNQ@@._V1._SY314_CR11,0,214,314_.jpg";
+    }
+  </script>
+</head>
+ 
+<body>
+  <h2>My most awesomeness javscript-driven page</h2>
+  <form>
+    <input type="button" value="Say Hello!"
+    onClick="sayHello();">
+ 
+    <input type="button" value="Change me to Green!"
+    onClick="changeBGC('green');">
+ 
+    <input type="button" value="Change Color!"
+    onClick="promptColor()">
+  </form>
+ 
+<a href="#" onMouseOver="changeBGC('blue');">Mouse me over to turn Blue</a>
+<br><br>
+<img onClick='changeImage();' src="http://who-is-awesome.com/who-is-awesome.jpg" id="imageid" />
+ 
+</body>
+ 
+</html>

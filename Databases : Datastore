@@ -1,0 +1,15 @@
+Databases / Datastore
+
+*CRUD
+*Create Read Update Destroy
+
+Brands
+Mongo, SQLite, Postgres, 
+
+Types of Databases
+*Key/Value
+*JSON
+*Relation
+*SQL
+*XML
+*Spreadsheet(CSV)

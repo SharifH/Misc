@@ -1,0 +1,16 @@
+funtion main(){
+  
+  var word = "watermelon";
+  var guess_array = ["_","_","_","_","_","_","_","_","_","_"]
+  var guesses = 8
+  var answer_arr = (word.split(''));
+  console.log(guess_array);
+
+  function arrayAreaEqual(ary1,ary2){
+    return(ary1.join('')==ary2.join(''));
+  }
+
+  function guess(letter){
+    var index = answer_arr.indexOf(letter)
+  }
+}
